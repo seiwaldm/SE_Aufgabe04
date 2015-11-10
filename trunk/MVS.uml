@@ -2,9 +2,26 @@
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_kgrjEITMEeWPf805Mur3fg" name="RootElement" visibility="public">
   <packagedElement xmi:type="uml:Interaction" xmi:id="_ksqwoITMEeWPf805Mur3fg" name="Interaction1"/>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_kuWysITMEeWPf805Mur3fg" name="Interaction2"/>
-  <packagedElement xmi:type="uml:Activity" xmi:id="_kuiY4ITMEeWPf805Mur3fg" name="Registration" node="_oN3FMIeaEeWt7NCIDrQ7Ag">
-    <ownedBehavior xmi:type="uml:Activity" xmi:id="_-c0asIeaEeWt7NCIDrQ7Ag" name="fill in RegistrationForm"/>
-    <node xmi:type="uml:InitialNode" xmi:id="_oN3FMIeaEeWt7NCIDrQ7Ag"/>
+  <packagedElement xmi:type="uml:Activity" xmi:id="_kuiY4ITMEeWPf805Mur3fg" name="Registration" node="_oN3FMIeaEeWt7NCIDrQ7Ag _3SsnQIejEeWshr_2fnBfYg _Srtm0IekEeWshr_2fnBfYg _avTp0IekEeWshr_2fnBfYg _2AF6cIekEeWshr_2fnBfYg _Mm7kcIelEeWshr_2fnBfYg _eVWG8IelEeWshr_2fnBfYg _zCNXkIelEeWshr_2fnBfYg _VTcMIIemEeWshr_2fnBfYg">
+    <edge xmi:type="uml:ControlFlow" xmi:id="_Us8ewIekEeWshr_2fnBfYg" target="_Srtm0IekEeWshr_2fnBfYg" source="_oN3FMIeaEeWt7NCIDrQ7Ag"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_52MpUIekEeWshr_2fnBfYg" target="_2AF6cIekEeWshr_2fnBfYg" source="_avTp0IekEeWshr_2fnBfYg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_R3xzAIelEeWshr_2fnBfYg" name="not valid" target="_Mm7kcIelEeWshr_2fnBfYg" source="_2AF6cIekEeWshr_2fnBfYg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_VOZJgIelEeWshr_2fnBfYg" target="_Srtm0IekEeWshr_2fnBfYg" source="_Mm7kcIelEeWshr_2fnBfYg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_g0zzAIelEeWshr_2fnBfYg" name="valid" target="_eVWG8IelEeWshr_2fnBfYg" source="_2AF6cIekEeWshr_2fnBfYg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_5L0aIIelEeWshr_2fnBfYg" target="_zCNXkIelEeWshr_2fnBfYg" source="_Srtm0IekEeWshr_2fnBfYg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_6OQukIelEeWshr_2fnBfYg" name="not valid" target="_Srtm0IekEeWshr_2fnBfYg" source="_zCNXkIelEeWshr_2fnBfYg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_B6mIIIemEeWshr_2fnBfYg" name="valid" target="_avTp0IekEeWshr_2fnBfYg" source="_zCNXkIelEeWshr_2fnBfYg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_W8a8IIemEeWshr_2fnBfYg" target="_VTcMIIemEeWshr_2fnBfYg" source="_eVWG8IelEeWshr_2fnBfYg"/>
+    <edge xmi:type="uml:ControlFlow" xmi:id="_XbUeoIemEeWshr_2fnBfYg" target="_3SsnQIejEeWshr_2fnBfYg" source="_VTcMIIemEeWshr_2fnBfYg"/>
+    <node xmi:type="uml:InitialNode" xmi:id="_oN3FMIeaEeWt7NCIDrQ7Ag" outgoing="_Us8ewIekEeWshr_2fnBfYg"/>
+    <node xmi:type="uml:ActivityFinalNode" xmi:id="_3SsnQIejEeWshr_2fnBfYg" name="" incoming="_XbUeoIemEeWshr_2fnBfYg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Srtm0IekEeWshr_2fnBfYg" name="fill in/submit RegistrationForm" incoming="_Us8ewIekEeWshr_2fnBfYg _VOZJgIelEeWshr_2fnBfYg _6OQukIelEeWshr_2fnBfYg" outgoing="_5L0aIIelEeWshr_2fnBfYg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_avTp0IekEeWshr_2fnBfYg" name="send VerificationMail" incoming="_B6mIIIemEeWshr_2fnBfYg" outgoing="_52MpUIekEeWshr_2fnBfYg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_2AF6cIekEeWshr_2fnBfYg" name="MailAddress valid?" incoming="_52MpUIekEeWshr_2fnBfYg" outgoing="_R3xzAIelEeWshr_2fnBfYg _g0zzAIelEeWshr_2fnBfYg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_Mm7kcIelEeWshr_2fnBfYg" name="Adress already in System / Mail not deliverable" incoming="_R3xzAIelEeWshr_2fnBfYg" outgoing="_VOZJgIelEeWshr_2fnBfYg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_eVWG8IelEeWshr_2fnBfYg" name="LogIn with Mail/Password" incoming="_g0zzAIelEeWshr_2fnBfYg" outgoing="_W8a8IIemEeWshr_2fnBfYg"/>
+    <node xmi:type="uml:DecisionNode" xmi:id="_zCNXkIelEeWshr_2fnBfYg" name="PasswordSpelling?" incoming="_5L0aIIelEeWshr_2fnBfYg" outgoing="_6OQukIelEeWshr_2fnBfYg _B6mIIIemEeWshr_2fnBfYg"/>
+    <node xmi:type="uml:OpaqueAction" xmi:id="_VTcMIIemEeWshr_2fnBfYg" name="WelcomePage" incoming="_W8a8IIemEeWshr_2fnBfYg" outgoing="_XbUeoIemEeWshr_2fnBfYg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Activity" xmi:id="_kuv0QITMEeWPf805Mur3fg" name="Activity2"/>
   <packagedElement xmi:type="uml:Actor" xmi:id="_J1-xEIWHEeW9kckNRzewlA" name="User"/>
